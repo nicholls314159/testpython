@@ -21,9 +21,7 @@ class MainHandler(webapp2.RequestHandler):
    
    def get(self):
         if DEVELOPER_KEY == "REPLACE_ME":
-          self.response.write("""You must set up a project and get an API key
-                                 to run this project.  Please visit 
-				 <landing page> to do so."""
+          self.response.write("""You must set up a project and get an API key to run this project.  Please visit <landing page> to do so."""
         else:
           youtube = build(
             YOUTUBE_API_SERVICE_NAME, 
