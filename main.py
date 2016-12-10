@@ -3,7 +3,7 @@ import urllib
 import webapp2
 import jinja2
 
-from googleapiclient.discovery import build
+from apiclient.discovery import build
 from optparse import OptionParser
 
 JINJA_ENVIRONMENT = jinja2.Environment(
