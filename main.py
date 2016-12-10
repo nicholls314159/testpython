@@ -3,7 +3,7 @@ import urllib
 import webapp2
 import jinja2
 
-from apiclient.discovery import build
+from googleapiclient.discovery import build
 from optparse import OptionParser
 
 JINJA_ENVIRONMENT = jinja2.Environment(
@@ -13,7 +13,7 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 # Set DEVELOPER_KEY to the "API key" value from the Google Developers Console:
 # https://console.developers.google.com/project/_/apiui/credential
 # Please ensure that you have enabled the YouTube Data API for your project.
-DEVELOPER_KEY = "AIzaSyCOPuyGsgwdvHveY0teGPvaMP0TzufVQTQ"
+DEVELOPER_KEY = "REPLACE_ME"
 YOUTUBE_API_SERVICE_NAME = "youtube"
 YOUTUBE_API_VERSION = "v3"
 
@@ -21,7 +21,9 @@ class MainHandler(webapp2.RequestHandler):
    
    def get(self):
         if DEVELOPER_KEY == "REPLACE_ME":
-          self.response.write("""You must set up a project and get an API key to run this project.  Please visit <landing page> to do so."""
+          self.response.write("""You must set up a project and get an API key
+                                 to run this project.  Please visit 
+				 <landing page> to do so.""")
         else:
           youtube = build(
             YOUTUBE_API_SERVICE_NAME, 
